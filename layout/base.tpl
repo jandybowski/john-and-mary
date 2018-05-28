@@ -64,6 +64,7 @@
 	{/if}
 	{"layout.css"|asset_url:stylesheet_tag}
 	{"style.css"|asset_url:stylesheet_tag}
+	{"jm-shoplo-theme.css"|asset_url:stylesheet_tag}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	{head_content}
 </head>
@@ -93,17 +94,11 @@
 <header class="header-10 {if $settings->use_banner_only_on_homepage && $template != 'home'}not-absolute{/if} {if $settings->fixed_header == 1} sticky-bar sticky-after-this{/if}">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-9">
-                <div id="logo">
-                    {if $settings->use_logo_image}
-                        <a href="{$ROOT}/"><img class="logo_img" src="{$settings->content_logo|asset_url}" /></a>
-                    {else}
-                        <a href="{$ROOT}/">{$shop->name|ucfirst}</a>
-                    {/if}
-                </div>
+            <div class="col-xs-12">
                 {snippet file="main_nav"}
             </div>
-            <div class="header_right col-xs-12 col-sm-12 col-md-12 col-xl-3 sm-hide">
+            <!--
+			<div class="header_right col-xs-12 col-sm-12 col-md-12 col-xl-3 sm-hide">
                 <div class="cartWidget">
                     {if $template != 'cart'}
                     {if $settings->show_sliding_cart_widget}
@@ -148,7 +143,7 @@
                         </select>
                     </div>
                 {/if}
-            </div>
+            </div>-->
         </div>
     </div>
 </header>

@@ -1,0 +1,152 @@
+/* J&M custom */
+
+
+#page-home #page::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background: linear-gradient(to bottom, rgba(0,0,0,.45), transparent);
+    z-index: 5;
+}
+
+#page-home .header-10 {
+    z-index: 20;
+}
+
+#page-home .jm-nav {
+    background: none;
+}
+
+#page-home #mainNav ul li a {
+    color: white;
+}
+
+#page-home .jm-nav__logo-image {
+    fill: white;
+}
+
+#page-home .header-10 #mainNav>ul>li .submenu {
+    background: transparent;
+}
+
+.icon-cart {
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+.cart-widget-total-count {
+    position: absolute;
+    left: .5em;
+    font-weight: 100;
+}
+
+.jm-nav {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding-top: 2em;
+}
+
+.jm-nav__logo-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jm-nav__logo-image {
+    max-width: 100%;
+    max-height: 4em;
+}
+
+
+.header-10 #mainNav {
+    float: none;
+}
+
+.header-10 #mainNav>ul>li {
+    line-height: 1.5;
+}
+
+.header-10 #mainNav ul li a {
+    font-weight: 100;
+}
+
+.jm-obj-fit__cover {
+    object-fit: cover;
+}
+
+.jm-d-flex {
+    display: flex;
+}
+
+.jm-flex-1 {
+    flex: 1;
+}
+
+
+.grid-col3-1 .product-list figure .img img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.grid-col3-1 .product-list figure .img img.hovered-photo {
+    visibility: visible;
+    display: none;
+}
+
+.grid-col3-1 .product-list figure .img:hover img.main-photo {
+    display: none;
+}
+
+.grid-col3-1 .product-list figure .img:hover img.hovered-photo {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    width: 100%;
+}
+
+.header-10 #mainNav>ul>li .submenu {
+    padding-top: 1em;
+    padding-left: 1em;
+    margin-left: -1em;
+    line-height: 1.5;
+    background: rgba(255,255,255,.9);
+}
+
+.header-10 #mainNav>ul>li ul li {
+    padding: 0;
+    padding-bottom: 1em;
+}
+
+.grid-col3-1 .product-list figcaption {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 10px;
+}
+
+@media (min-width: 768px) {
+    .grid-col3-1 .product-list figure {
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+
+    .grid-col3-1 .product-list figcaption {
+        opacity: 0;
+        transition: all .25s ease-in-out;
+        visibility: hidden;
+    }
+
+    .grid-col3-1 .product-list .img:hover + figcaption {
+        opacity: 1;
+        background: rgba(255,255,255,.65);
+        visibility: visible;
+    }
+}

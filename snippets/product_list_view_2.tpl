@@ -5,8 +5,7 @@
              'nazwa_koloru_w_panelu'=>'#321312',
 
 
-    Czyli najpierw wpisujemy nazwę koloru którą wpisaliśmy w wariancie produktu, a następnie przypisujemy do niej kolor HEX.
-    Należy pamiętać, że paleta będzie działać tylko wtedy gdy składnia     będzie poprawna!
+    Czyli najpierw wpisujemy nazwę koloru którą wpisaliśmy w wariancie produktu, a następnie przypisujemy do niej kolor HEX. Należy pamiętać, że paleta będzie działać tylko wtedy gdy składnia     będzie poprawna!
     Ostani kolor nie powinien mieć na końcu znaku przecinka.
 -->
 {$pallete = [
@@ -20,65 +19,59 @@
 ]}
 <div class="category_2">
     <div class="container">
+        <div class="row">
             {if $page_type == 'category'}
                 {if $settings->category_show_description}
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            {if $category->description}
-                                {$category->description}
-                            {/if}
-                        </div>
+                    <div class="col-sm-12 col-xs-12">
+                        {if $category->description}
+                            {$category->description}
+                        {/if}
                     </div>
                 {/if}
             {elseif $page_type == 'vendor'}
                 {if $settings->vendor_show_description}
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            {if $vendor->description}
-                                {$vendor->description}
-                            {/if}
-                        </div>
+                    <div class="col-sm-12 col-xs-12">
+                        {if $vendor->description}
+                            {$vendor->description}
+                        {/if}
                     </div>
                 {/if}
             {elseif $page_type == 'collection'}
                 {if $settings->collection_show_description}
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            {if $collection->description}
-                                {$collection->description}
-                            {/if}
-                        </div>
+                    <div class="col-sm-12 col-xs-12">
+                        {if $collection->description}
+                            {$collection->description}
+                        {/if}
                     </div>
                 {/if}
             {/if}
-        {if $settings->category_2_show_categories_nav ||  $settings->category_2_show_filters_sort}
-            <div class="row filters">
-                {if $settings->category_2_show_categories_nav}
-                <div class="col-xs-12 col-md-9">
-                    <div class="categories-section">
-                        {$categories->createListView($category->url, 'categories', 'active')}
-                    </div>
+        </div>
+        <div class="row filters">
+            {if $settings->category_2_show_categories_nav}
+            <div class="col-xs-12 col-md-9">
+                <div class="categories-section">
+                    {$categories->createListView($category->url, 'categories', 'active')}
                 </div>
-                {/if}
-                {if $settings->category_2_show_filters_sort}
-                <div class="col-xs-12 col-md-3">
-                    <section class="filter-section filter-sort">
-                        <select class="select transparent-label" data-placeholder="Kolejność">
-                            <option value="">{trans}store_theme_translations.sort{/trans}</option>
-                            <option value="0">{trans}store_theme_translations.clear_filters{/trans}</option>
-                            <option value="sort=price">{trans}store_theme_translations.from_cheapest{/trans}</option>
-                            <option value="sort=price&order=desc">{trans}store_theme_translations.from_most_expensive{/trans}</option>
-                            <option value="sort=title">{trans}store_theme_translations.filter_by_name{/trans}</option>
-                            <option value="sort=title&order=desc">{trans}store_theme_translations.filter_by_name_reverse{/trans}</option>
-                        </select>
-                    </section>
-                </div>
-                {/if}
-                {if $settings->show_breadcrumbs}
-                    {snippet file="breadcrumbs"}
-                {/if}
             </div>
-        {/if}
+            {/if}
+            {if $settings->category_2_show_filters_sort}
+            <div class="col-xs-12 col-md-3">
+                <section class="filter-section filter-sort">
+                    <select class="select transparent-label" data-placeholder="Kolejność">
+                        <option value="">{trans}store_theme_translations.sort{/trans}</option>
+                        <option value="0">{trans}store_theme_translations.clear_filters{/trans}</option>
+                        <option value="sort=price">{trans}store_theme_translations.from_cheapest{/trans}</option>
+                        <option value="sort=price&order=desc">{trans}store_theme_translations.from_most_expensive{/trans}</option>
+                        <option value="sort=title">{trans}store_theme_translations.filter_by_name{/trans}</option>
+                        <option value="sort=title&order=desc">{trans}store_theme_translations.filter_by_name_reverse{/trans}</option>
+                    </select>
+                </section>
+            </div>
+            {/if}
+            {if $settings->show_breadcrumbs}
+                {snippet file="breadcrumbs"}
+            {/if}
+        </div>
 
         <div class="row">
             {if $page_type == 'search'}
@@ -87,37 +80,6 @@
 				{assign paginateItems $page_set->getProducts()}
 			{/if}
             {paginate set=$page_set items=$paginateItems per_page=$settings->category_2_list_products_count}
-
-            <div class="container">
-                {assign category_list $categories->all()}
-                {if $category_list}
-                    {foreach from=$category_list item="category"}
-                        {if !$category->top_category && $category->products_count != 0}
-                            <div class="row">
-                                <header class="page-header">
-                                    <div class="row">
-                                        <div class="col-xs-12 align-center">
-                                            <h1><a href="{reverse_url name='shop_category' category_name=$category->url}">{$category->title}</a></h1>
-                                        </div>
-                                    </div>
-                                    {snippet file="breadcrumbs"}
-                                </header>
-                            </div>
-                            {snippet file="list_categories_grid" grid_class="grid-col3-1" product_col_class="col-md-4 col-sm-6 col-xs-12" product_view=1 grid_columns=6}
-
-
-                        {/if}
-                    {/foreach}
-                {else}
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h4>{trans}store_theme_translations.msg_no_categories{/trans}</h4>
-                        </div>
-                    </div>
-                {/if}
-            </div>
-
-
             <div class="col-md-12">
                 <div class="{$grid_class}">
                     <div class="row">
