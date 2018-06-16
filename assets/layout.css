@@ -6219,7 +6219,7 @@ fieldset[disabled] .btn-gray:hover {
 .footer-2 .footer-social a:not(#shoplo):before {
     text-align: center;
     display: block;
-    font-size: 30px
+    font-size: 20px
 }
 
 .footer-2 .footer-nav {
@@ -6241,7 +6241,13 @@ fieldset[disabled] .btn-gray:hover {
 
 .footer-2 .footer-nav li {
     float: left;
-    margin-right: 22px
+    line-height: .9;
+}
+
+footer-2 .footer-nav li + li {
+    margin-left: 11px;
+    padding-left: 11px;
+    border-left: solid 1px;
 }
 
 .footer-2 .footer-nav li:last-child {
@@ -6253,7 +6259,6 @@ fieldset[disabled] .btn-gray:hover {
     padding: 1px 0;
     display: block;
     font-size: 1rem;
-    text-transform: capitalize
 }
 
 .footer-2 .footer-nav a:hover {

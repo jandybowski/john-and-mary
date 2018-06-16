@@ -50,6 +50,9 @@
 	<!-- END FACEBOOK OG DATA -->
 
 	<link rel="shortcut icon" type="image/png" href='{"favicon.png"|asset_url}' />
+	
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i&amp;subset=latin-ext" rel="stylesheet">
+
 	{if $settings->font_headers == "'Lato', Helvetica, Arial, sans-serif" || $settings->font_default == "'Lato', Helvetica, Arial, sans-serif"}
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	{/if}
@@ -162,13 +165,16 @@
                             <div class="slider">
                                 <ul class="slides" data-auto="{$settings->banner_choose_banner_27}">
                                     {foreach from=$banners->{$settings->banner_choose_banner_27}->items item="banner" name="banner_list"}
-                                        <li data-duration="{$banner->duration}"
-                                            style='background-image: url("{$banner->image}");'>
-                                            {* <a href="{$banner->url}">
-                                                <figure>
-                                                    <img src="{$banner->image}?{$banner->id}" alt="{$banner->title}" />
-                                                </figure>
-                                            </a> *}
+                                        <li data-duration="{$banner->duration}">
+											{if {$banner->text} != 'nolink'}
+                                            	<a href="{$banner->url}">
+											{/if}
+													<figure>
+														<img src="{$banner->image}?{$banner->id}" alt="{$banner->title}" />
+													</figure>
+                                            {if {$banner->text} != 'nolink'}
+												</a>
+											{/if}
                                         </li>
                                     {/foreach}
                                 </ul>
