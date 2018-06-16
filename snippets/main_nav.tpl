@@ -28,66 +28,74 @@
     {/if}
   </div>
 </div>
-<nav id="mainNav" class="sm-hide row">
-  <ul class="col-xs-12 nav nav-inline nav-centered jm-nav">
-    {foreach from=$menulists->main_menu->links item="menu"}
-      <li class="nav-item{if $template == 'category' && $category->title == $menu->title} active
-      {elseif $template == 'collection' && ($menu->url|strpos:$collection->url !== false)} active
-      {elseif $template == 'list_categories' && 'Kategorie' == $menu->title} active
-      {elseif isset($page) and $page->url == $menu->url} active
-      {elseif isset($product) and $product_url == $menu->url} active
-      {elseif $template == 'home'}{if $menu->url == '/'} active{/if}{/if}">
-        <a href="{$menu->url}">{$menu->title}</a>
-          {if $menulists->{$menu->title|lower|replace:$langletters:$letters}->links|count > 0}
-            <ul class="submenu">
-              {foreach $menulists->{$menu->title|lower|replace:$langletters:$letters}->links item="submenu"}
-                <li><a href="{$submenu->url}">{$submenu->title}</a></li>
-              {/foreach}
-            </ul>
-          {/if}
-      </li>
-    {/foreach}
-    <li class="nav-item jm-nav__logo-item">
+<nav id="mainNav" class="sm-hide">
+  <ul class="row list-unstyled">
+    <li class="col-md-4 jm-nav__group">
+      <ul class="nav nav-inline nav-centered jm-nav">
+      {foreach from=$menulists->main_menu->links item="menu"}
+        <li class="nav-item{if $template == 'category' && $category->title == $menu->title} active
+        {elseif $template == 'collection' && ($menu->url|strpos:$collection->url !== false)} active
+        {elseif $template == 'list_categories' && 'Kategorie' == $menu->title} active
+        {elseif isset($page) and $page->url == $menu->url} active
+        {elseif isset($product) and $product_url == $menu->url} active
+        {elseif $template == 'home'}{if $menu->url == '/'} active{/if}{/if}">
+          <a href="{$menu->url}">{$menu->title}</a>
+            {if $menulists->{$menu->title|lower|replace:$langletters:$letters}->links|count > 0}
+              <ul class="submenu">
+                {foreach $menulists->{$menu->title|lower|replace:$langletters:$letters}->links item="submenu"}
+                  <li><a href="{$submenu->url}">{$submenu->title}</a></li>
+                {/foreach}
+              </ul>
+            {/if}
+        </li>
+      {/foreach}
+      </ul>
+    </li>
+    <li class="col-md-4 nav-item jm-nav__logo-item">
       <a href="{$ROOT}/">
         <svg class="jm-nav__logo-image">
           <use href="#logotype" />
         </svg>
       </a>
     </li>
-    {foreach from=$menulists->secondary_menu->links item="menu"}
-      <li class="nav-item{if $template == 'category' && $category->title == $menu->title} active
-      {elseif $template == 'collection' && ($menu->url|strpos:$collection->url !== false)} active
-      {elseif $template == 'list_categories' && 'Kategorie' == $menu->title} active
-      {elseif isset($page) and $page->url == $menu->url} active
-      {elseif isset($product) and $product_url == $menu->url} active
-      {elseif $template == 'home'}{if $menu->url == '/'} active{/if}{/if}">
-        <a href="{$menu->url}">{$menu->title}</a>
-          {if $menulists->{$menu->title|lower|replace:$langletters:$letters}->links|count > 0}
-            <ul class="submenu">
-              {foreach $menulists->{$menu->title|lower|replace:$langletters:$letters}->links item="submenu"}
-                <li><a href="{$submenu->url}">{$submenu->title}</a></li>
-              {/foreach}
-            </ul>
+    <li class="col-md-4 jm-nav__group">
+      <ul class="nav nav-inline nav-centered jm-nav jm-nav_right">
+        {foreach from=$menulists->secondary_menu->links item="menu"}
+          <li class="nav-item{if $template == 'category' && $category->title == $menu->title} active
+          {elseif $template == 'collection' && ($menu->url|strpos:$collection->url !== false)} active
+          {elseif $template == 'list_categories' && 'Kategorie' == $menu->title} active
+          {elseif isset($page) and $page->url == $menu->url} active
+          {elseif isset($product) and $product_url == $menu->url} active
+          {elseif $template == 'home'}{if $menu->url == '/'} active{/if}{/if}">
+            <a href="{$menu->url}">{$menu->title}</a>
+              {if $menulists->{$menu->title|lower|replace:$langletters:$letters}->links|count > 0}
+                <ul class="submenu">
+                  {foreach $menulists->{$menu->title|lower|replace:$langletters:$letters}->links item="submenu"}
+                    <li><a href="{$submenu->url}">{$submenu->title}</a></li>
+                  {/foreach}
+                </ul>
+              {/if}
+          </li>
+        {/foreach}
+        <li class="nav-item">
+          {if $template != 'cart'}
+            {if $settings->show_sliding_cart_widget}
+              <a href="#" class="cart-widget-trigger">
+            {else}
+              <a href="{reverse_url name='shop_cart'}">
+            {/if}
+          {else}
+            <span class="cart-widget-icon">
           {/if}
-      </li>
-    {/foreach}
-    <li class="nav-item">
-    {if $template != 'cart'}
-      {if $settings->show_sliding_cart_widget}
-        <a href="#" class="cart-widget-trigger">
-      {else}
-        <a href="{reverse_url name='shop_cart'}">
-      {/if}
-    {else}
-      <span class="cart-widget-icon">
-    {/if}
-    <span class="cart-widget-total-count">{$cart->item_count}</span>
-    <i class="icon-cart"></i>
-    {if $template != 'cart'}
-      </a>
-    {else}
-      </span>
-    {/if}
+          <span class="cart-widget-total-count">{$cart->item_count}</span>
+          <i class="icon-cart"></i>
+          {if $template != 'cart'}
+            </a>
+          {else}
+            </span>
+          {/if}
+        </li>
+      </ul>
     </li>
   </ul>
 </nav>

@@ -94,7 +94,7 @@
 	</div>
 </div>
 
-<header class="header-10 {if $settings->use_banner_only_on_homepage && $template != 'home'}not-absolute{/if} {if $settings->fixed_header == 1} sticky-bar sticky-after-this{/if}">
+<header class="header-10">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
