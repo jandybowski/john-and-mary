@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language" content="pl" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{if isset($meta)}{$meta->title}{else}{$shop->name}{/if}</title>
 	{if isset($meta)}<meta name="description" content="{$meta->description}" />{/if}
 	{if isset($meta)}<meta name="keywords" content="{$meta->keywords}" />{/if}
