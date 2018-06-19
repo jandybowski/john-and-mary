@@ -141,11 +141,47 @@
 .grid-col3-1 .product-list figcaption .product-price p {
     font-family: 'Cormorant Garamond', serif;
 	font-size: 1.3em;
+	font-style: italic;
 }
 .grid-col3-1 .product-list figcaption .list-product-title a {
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 1.3em;
 }	
+.product-2 .product-info .product-actions .price span {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.6em;
+	font-style: italic;
+}
+.product-2 .product-info header h1 {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 2.2em;
+}
+
+
+.footer-2 .footer-nav li + li {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: solid 1px;
+}
+
+html:not(.mm-opened) body:not(#page-home) {
+    padding-top: 100px;
+}
+
+body {
+    transition: all .3s ease-in-out;
+}
+
+body:not(#page-home) .header-10 {
+    background: white;
+    position: fixed;
+    top: 0;
+}
+
+.header-10 #mobileNav a .cart-widget-total-count,
+.header-10 #mobileNav span.cart-widget-icon .cart-widget-total-count {
+    left: -.1em;
+}
 	
 @media (min-width: 768px) {
     .grid-col3-1 .product-list figure {
@@ -181,24 +217,14 @@
     }
 }
 
-.footer-2 .footer-nav li + li {
-    margin-left: 15px;
-    padding-left: 15px;
-    border-left: solid 1px;
-}
-
 @media (max-width: 991px) {
     .header-10 #mainNav {
         width: auto;
     }
 }
 
-body:not(#page-home) {
-    padding-top: 100px;
-}
-
-body:not(#page-home) .header-10 {
-    background: white;
-    position: fixed;
-    top: 0;
+@media (max-width: 543px) {
+    .product-list figure .img a {
+        min-height: 65vw;
+    }
 }

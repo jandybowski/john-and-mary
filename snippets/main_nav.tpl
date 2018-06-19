@@ -1,7 +1,7 @@
 {assign "langletters" array('ą', 'ć', 'ę', 'ł', 'ś', 'ó', 'ż', 'ź', 'ń', ' ')}
 {assign "letters" array('a', 'c', 'e', 'l', 's', 'o', 'z', 'z', 'n', '_')}
 <div id="mobileNav" class="sm-show row">
-  <div class="{if !$shop->customer_accounts_enabled}col-xs-6{else}col-xs-3 col-xs-offset-1{/if} align-center">
+  <div class="{if !$shop->customer_accounts_enabled}col-xs-6{else}col-xs-3 col-xs-offset-1{/if} align-left">
     <a href="#mobileMenu" id="navToggle"><i class="icon icon-bars"></i></a>
   </div>
   {if $shop->customer_accounts_enabled}
@@ -9,7 +9,7 @@
     <a href="{reverse_url name=shop_client_login}"><i class="icon-account"></i></a>
   </div>
   {/if}
-  <div class="{if !$shop->customer_accounts_enabled}col-xs-6{else}col-xs-3{/if} align-center cart-widget-mobile">
+  <div class="{if !$shop->customer_accounts_enabled}col-xs-6{else}col-xs-3{/if} align-right cart-widget-mobile">
     {if $template != 'cart'}
       {if $settings->show_sliding_cart_widget}
       <a href="#" class="cart-widget-trigger">
