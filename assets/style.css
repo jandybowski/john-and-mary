@@ -11,11 +11,11 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
-a:not(.btn) {color: #ffffff; }
+a:not(.btn) {color: #000000; }
 a:hover:not(.btn) {color: #000; }
 
 body.bg-img{
-  background-image: url('https://cdn.shoplo.com/2655/s/4/assets/home.jpg?51');
+  background-image: url('https://cdn.shoplo.com/2655/s/4/assets/home.jpg?571');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -29,7 +29,7 @@ header.sticky-bar.is-sticky,
 .header-2 .sticky-bar.is-sticky {
     background: transparent;
 }
-#mainNav ul li a{color: #ffffff;}
+#mainNav ul li a{color: #000000;}
 .nav-bar-top-border, .nav-bar-bottom-border {
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;}
@@ -55,7 +55,7 @@ footer[class^="footer-"] a, footer[class^="footer-"]{color: #2d2d2d;}
 .btn,
 .product-info .product-actions .add-to-cart,
 .product-7 .product-info .right-actions .add-to-cart
-{background: #707070; color: #ffffff;}
+{background: #707070; color: #030303;}
 
 /* Product page colors */
 .product-6 .gallery-wrapper, .product-7 .gallery-wrapper { background: ;}
@@ -85,7 +85,7 @@ footer[class^="footer-"] a, footer[class^="footer-"]{color: #2d2d2d;}
 .pswp__button,
 .pswp__button--arrow--left:before,
 .pswp__button--arrow--right:before {
-background: url(https://cdn.shoplo.com/2655/s/4/assets/default-skin.png?51) 0 0 no-repeat;
+background: url(https://cdn.shoplo.com/2655/s/4/assets/default-skin.png?571) 0 0 no-repeat;
 background-size: 264px 88px;
 width: 44px;
 height: 44px; }

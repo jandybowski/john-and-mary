@@ -2,7 +2,7 @@
 	{assign category_list $categories->all()}
 	{if $category_list}
 		{foreach from=$category_list item="category"}
-			{if $category->top_category && $category->products_count != 0}
+			{if !$category->top_category && $category->products_count != 0}
 				<div class="row">
 					<header class="page-header">
 						<div class="row">
@@ -13,7 +13,7 @@
 						{snippet file="breadcrumbs"}
 					</header>
 				</div>
-				{snippet file="list_categories_grid" grid_class="grid-col3-1" product_col_class="col-md-4 col-sm-6 col-xs-12" product_view=1 grid_columns=3}
+				{snippet file="list_categories_grid" grid_class="grid-col3-1" product_col_class="col-md-4 col-sm-6 col-xs-12" product_view=1 grid_columns='6'}
 
 
 			{/if}

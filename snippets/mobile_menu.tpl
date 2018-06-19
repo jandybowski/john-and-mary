@@ -28,6 +28,23 @@
                 {/if}
             </li>
         {/foreach}
+        {foreach from=$menulists->secondary_menu->links item="menu"}
+            <li class="nav-item{if $template == 'category' && $category->title == $menu->title} active
+            {elseif $template == 'collection' && ($menu->url|strpos:$collection->url !== false)} active
+            {elseif $template == 'list_categories' && 'Kategorie' == $menu->title} active
+            {elseif isset($page) and $page->url == $menu->url} active
+            {elseif isset($product) and $product_url == $menu->url} active
+            {elseif $template == 'home'}{if $menu->url == '/'} active{/if}{/if}">
+                <a href="{$menu->url}">{$menu->title}</a>
+                {if $menulists->{$menu->title|lower|replace:$langletters:$letters}->links|count > 0}
+                    <ul class="submenu">
+                    {foreach $menulists->{$menu->title|lower|replace:$langletters:$letters}->links item="submenu"}
+                        <li><a href="{$submenu->url}">{$submenu->title}</a></li>
+                    {/foreach}
+                    </ul>
+                {/if}
+            </li>
+        {/foreach}
     </ul>
 </nav>
 <script>

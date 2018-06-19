@@ -50,6 +50,9 @@
 	<!-- END FACEBOOK OG DATA -->
 
 	<link rel="shortcut icon" type="image/png" href='{"favicon.png"|asset_url}' />
+	
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i&amp;subset=latin-ext" rel="stylesheet">
+
 	{if $settings->font_headers == "'Lato', Helvetica, Arial, sans-serif" || $settings->font_default == "'Lato', Helvetica, Arial, sans-serif"}
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	{/if}
@@ -64,6 +67,7 @@
 	{/if}
 	{"layout.css"|asset_url:stylesheet_tag}
 	{"style.css"|asset_url:stylesheet_tag}
+	{"jm-shoplo-theme.css"|asset_url:stylesheet_tag}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	{head_content}
 </head>
@@ -90,20 +94,14 @@
 	</div>
 </div>
 
-<header class="header-10 {if $settings->use_banner_only_on_homepage && $template != 'home'}not-absolute{/if} {if $settings->fixed_header == 1} sticky-bar sticky-after-this{/if}">
+<header class="header-10">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-9">
-                <div id="logo">
-                    {if $settings->use_logo_image}
-                        <a href="{$ROOT}/"><img class="logo_img" src="{$settings->content_logo|asset_url}" /></a>
-                    {else}
-                        <a href="{$ROOT}/">{$shop->name|ucfirst}</a>
-                    {/if}
-                </div>
+            <div class="col-xs-12">
                 {snippet file="main_nav"}
             </div>
-            <div class="header_right col-xs-12 col-sm-12 col-md-12 col-xl-3 sm-hide">
+            <!--
+			<div class="header_right col-xs-12 col-sm-12 col-md-12 col-xl-3 sm-hide">
                 <div class="cartWidget">
                     {if $template != 'cart'}
                     {if $settings->show_sliding_cart_widget}
@@ -148,7 +146,7 @@
                         </select>
                     </div>
                 {/if}
-            </div>
+            </div>-->
         </div>
     </div>
 </header>
@@ -167,13 +165,16 @@
                             <div class="slider">
                                 <ul class="slides" data-auto="{$settings->banner_choose_banner_27}">
                                     {foreach from=$banners->{$settings->banner_choose_banner_27}->items item="banner" name="banner_list"}
-                                        <li data-duration="{$banner->duration}"
-                                            style='background-image: url("{$banner->image}");'>
-                                            {* <a href="{$banner->url}">
-                                                <figure>
-                                                    <img src="{$banner->image}?{$banner->id}" alt="{$banner->title}" />
-                                                </figure>
-                                            </a> *}
+                                        <li data-duration="{$banner->duration}">
+											{if {$banner->text} != 'nolink'}
+                                            	<a href="{$banner->url}">
+											{/if}
+													<figure>
+														<img src="{$banner->image}?{$banner->id}" alt="{$banner->title}" />
+													</figure>
+                                            {if {$banner->text} != 'nolink'}
+												</a>
+											{/if}
                                         </li>
                                     {/foreach}
                                 </ul>

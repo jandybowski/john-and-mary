@@ -152,7 +152,7 @@ MAIN = {
     navToggleInit: function () {
         m.navToggle.on('click', function (e) {
             e.preventDefault();
-            $('#mainNav').toggle();
+            $('#secondaryNav').toggle();
         });
     },
 

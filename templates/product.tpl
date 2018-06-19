@@ -206,3 +206,5 @@
         var isProgressiv = 1;
     </script>
 {/if}
+
+{snippet file="footer"}
