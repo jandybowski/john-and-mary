@@ -137,6 +137,7 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 15px 10px;
+    min-height: 5em;
 }
 .grid-col3-1 .product-list figcaption .product-price p {
     font-family: 'Cormorant Garamond', serif;
@@ -158,12 +159,6 @@
 }
 
 
-.footer-2 .footer-nav li + li {
-    margin-left: 15px;
-    padding-left: 15px;
-    border-left: solid 1px;
-}
-
 html:not(.mm-opened) body:not(#page-home) {
     padding-top: 100px;
 }
@@ -182,6 +177,10 @@ body:not(#page-home) .header-10 {
 .header-10 #mobileNav span.cart-widget-icon .cart-widget-total-count {
     left: -.1em;
 }
+
+.product-price {
+    white-space: nowrap;
+}
 	
 @media (min-width: 768px) {
     .grid-col3-1 .product-list figure {
@@ -193,6 +192,7 @@ body:not(#page-home) .header-10 {
         opacity: 0;
         transition: all .25s ease-in-out;
         visibility: hidden;
+        min-height: none;
     }
 
     .grid-col3-1 .product-list .img:hover + figcaption {
@@ -215,6 +215,11 @@ body:not(#page-home) .header-10 {
     #page-home .header-10 {
         z-index: 20;
     }
+
+    .footer-2 .footer-nav {
+        float: right;
+    }
+
 }
 
 @media (max-width: 991px) {
@@ -226,5 +231,17 @@ body:not(#page-home) .header-10 {
 @media (max-width: 543px) {
     .product-list figure .img a {
         min-height: 65vw;
+    }
+    .footer-2 .footer-nav li {
+        float: none;
+        margin-bottom: .5em;
+    }
+}
+
+@media (min-width: 544px) {
+    .footer-2 .footer-nav li + li {
+        margin-left: 15px;
+        padding-left: 15px;
+        border-left: solid 1px;
     }
 }

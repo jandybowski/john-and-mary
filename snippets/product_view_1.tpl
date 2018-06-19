@@ -32,7 +32,7 @@
             </a>
         </div>
     {/if}
-    <figcaption class="{if $settings->product_name_align == 'left'}align-left{elseif $settings->product_name_align == 'right'}align-right{else}align-center{/if}">
+    <figcaption>
         <h3 class="list-product-title">
             <a href="{$productUrl}" title="{$p->title}">
                 {$p->name}

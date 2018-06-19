@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			{if $settings->footer_show_social}
-			<div class="col-xs-12 col-md-6">
+			<div class="col-xs-12 col-md-3">
 				<div class="footer-social">
 					{if $settings->show_facebook}
 						<a href="{$settings->facebook_url}" target="_blank" class="icon icon-facebook"></a>
@@ -19,7 +19,7 @@
 				</div>
       </div>
 			{/if}
-			<div class="col-xs-12 col-md-6 align-right">
+			<div class="col-xs-12 col-md-9">
         {if $settings->show_ft_menu_1 && $settings->ft_menu_1 != ""}
           <ul class="footer-nav">
             {foreach from=$menulists->{$settings->ft_menu_1}->links item="menu"}
