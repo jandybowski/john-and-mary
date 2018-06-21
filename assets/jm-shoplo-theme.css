@@ -1,5 +1,11 @@
 /* J&M custom */
 
+html,
+body,
+#page {
+    height: 100%;
+}
+
 #page-home .jm-nav {
     background: none;
 }
@@ -43,7 +49,7 @@
 
 .cart-widget-total-count {
     position: absolute;
-    left: .5em;
+    left: 1.5em;
     font-weight: 100;
 }
 
@@ -243,5 +249,44 @@ body:not(#page-home) .header-10 {
         margin-left: 15px;
         padding-left: 15px;
         border-left: solid 1px;
+    }
+
+    .footer-2 {
+        min-height: 100px;
+    }
+
+    #page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category_2,
+    .page-content,
+    #page {
+        flex: 1;
+    }
+
+    .nav-inline .nav-item {
+        white-space: nowrap;
+    }
+
+    .nav-inline .nav-item + .nav-item {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        position: relative;
+    }
+
+    .nav-inline .nav-item + .nav-item:not(.nav-cart)::before {
+        content: " ";
+        top: .25em;
+        left: 0;
+        position: absolute;
+        height: 1em;
+        width: 1px;
+        background: #777;
+    }
+
+    #page-home .nav-item::before {
+        background: rgba(255, 255, 255, .75);
     }
 }

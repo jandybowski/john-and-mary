@@ -77,7 +77,7 @@
               {/if}
           </li>
         {/foreach}
-        <li class="nav-item">
+        <li class="nav-item nav-cart">
           {if $template != 'cart'}
             {if $settings->show_sliding_cart_widget}
               <a href="#" class="cart-widget-trigger">
