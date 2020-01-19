@@ -1,15 +1,22 @@
 {assign "langletters" array('ą', 'ć', 'ę', 'ł', 'ś', 'ó', 'ż', 'ź', 'ń', ' ')}
 {assign "letters" array('a', 'c', 'e', 'l', 's', 'o', 'z', 'z', 'n', '_')}
 <div id="mobileNav" class="sm-show row">
-  <div class="{if !$shop->customer_accounts_enabled}col-xs-6{else}col-xs-3 col-xs-offset-1{/if} align-left">
+  <div class="{if !$shop->customer_accounts_enabled}col-xs-2{else}col-xs-3 col-xs-offset-1{/if} align-left">
     <a href="#mobileMenu" id="navToggle"><i class="icon icon-bars"></i></a>
   </div>
+	<div class="col-xs-8">
+		<a class="mobile-home-link" href="{$ROOT}/">
+			<svg class="jm-nav__logo-image jm-nav__logo-image_mobile">
+				<use xlink:href="#logotype"></use>
+			</svg>
+		</a>
+	</div>
   {if $shop->customer_accounts_enabled}
   <div class="col-xs-4 align-center">
     <a href="{reverse_url name=shop_client_login}"><i class="icon-account"></i></a>
   </div>
   {/if}
-  <div class="{if !$shop->customer_accounts_enabled}col-xs-6{else}col-xs-3{/if} align-right cart-widget-mobile">
+  <div class="{if !$shop->customer_accounts_enabled}col-xs-2{else}col-xs-3{/if} align-right cart-widget-mobile">
     {if $template != 'cart'}
       {if $settings->show_sliding_cart_widget}
       <a href="#" class="cart-widget-trigger">
@@ -101,7 +108,7 @@
 </nav>
 
 <div hidden>
-	<svg xmlns="http://www.w3.org/2000/svg">
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 		<defs>
 			<symbol id="logotype" viewBox="0 10 222 36.75">
 				<title>John &amp; Mary</title>
