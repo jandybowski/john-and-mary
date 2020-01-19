@@ -213,6 +213,20 @@ body:not(#page-home) .header-10 {
 .product-price {
     white-space: nowrap;
 }
+
+.page-content {
+    width: 100%;
+}
+
+.shb-contact-form {
+    max-width: 600px;
+    width: 100%;    
+}
+
+.shb-contact-form .shb-input {
+    width: 100%;
+    padding: 0 0.5em;
+}
 	
 @media (min-width: 768px) {
     .grid-col3-1 .product-list figure {
@@ -292,20 +306,6 @@ body:not(#page-home) .header-10 {
     .page-content,
     #page {
         flex: 1;
-    }
-
-    .page-content {
-        width: 100%;
-    }
-
-    .shb-contact-form {
-        max-width: 600px;
-        width: 100%;    
-    }
-
-    .shb-contact-form .shb-input {
-        width: 100%;
-        padding: 0 0.5em;
     }
 
     .nav-inline .nav-item {
