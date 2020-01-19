@@ -69,6 +69,14 @@ body,
 	border-color: #fff;
 }
 
+#page-page .page-content .section-title h1 {
+    font-size: 25px;
+    color: black;
+    text-transform: uppercase;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+
 
 .icon-cart {
     font-size: 2em;
