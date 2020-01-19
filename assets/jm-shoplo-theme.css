@@ -294,6 +294,20 @@ body:not(#page-home) .header-10 {
         flex: 1;
     }
 
+    .page-content {
+        width: 100%;
+    }
+
+    .shb-contact-form {
+        max-width: 600px;
+        width: 100%;    
+    }
+
+    .shb-contact-form .shb-input {
+        width: 100%;
+        padding: 0 0.5em;
+    }
+
     .nav-inline .nav-item {
         white-space: nowrap;
     }
