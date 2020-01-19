@@ -1,6 +1,6 @@
 {assign "langletters" array('ą', 'ć', 'ę', 'ł', 'ś', 'ó', 'ż', 'ź', 'ń', ' ')}
 {assign "letters" array('a', 'c', 'e', 'l', 's', 'o', 'z', 'z', 'n', '_')}
-<div id="mobileNav" class="sm-show row">
+<div id="mobileNav" class="md-show row">
   <div class="{if !$shop->customer_accounts_enabled}col-xs-2{else}col-xs-3 col-xs-offset-1{/if} align-left">
     <a href="#mobileMenu" id="navToggle"><i class="icon icon-bars"></i></a>
   </div>
@@ -35,7 +35,7 @@
     {/if}
   </div>
 </div>
-<nav id="mainNav" class="sm-hide">
+<nav id="mainNav" class="md-hide">
   <ul class="row list-unstyled">
     <li class="col-md-4 jm-nav__group">
       <ul class="nav nav-inline nav-centered jm-nav">
