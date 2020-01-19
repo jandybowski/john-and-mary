@@ -65,6 +65,9 @@
                     <header>
                         <h1>{$product->title}</h1>
                     </header>
+					{if !$product->available}
+					<p class="no-available-product">produkt aktualnie niedostępny</p>
+					{/if}
                     {if $settings->show_vendor}
                         {if $product->vendor->title}<span class="product-vendor">{trans}store_theme_translations.vendor{/trans} {$product->vendor->title}</span>{/if}
                     {/if}
@@ -207,4 +210,4 @@
     </script>
 {/if}
 
-{snippet file="footer"}
+{snippet file="footer"}<!--instock_reminder_app-->{snippet file="instock_reminder_app"}<!--instock_reminder_app-->

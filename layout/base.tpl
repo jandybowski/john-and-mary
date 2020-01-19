@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
 <head itemscope itemtype="http://schema.org/WebSite">
+	
 	<!-- META DATA -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language" content="pl" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{if isset($meta)}{$meta->title}{else}{$shop->name}{/if}</title>
 	{if isset($meta)}<meta name="description" content="{$meta->description}" />{/if}
 	{if isset($meta)}<meta name="keywords" content="{$meta->keywords}" />{/if}
 	<!-- END META DATA -->
-
+		
 	<!-- FACEBOOK OG DATA -->
 	{if $template == 'home'}
 		<meta property="og:title" itemprop='name' content="{$shop->name}" />
@@ -67,7 +68,7 @@
 	{/if}
 	{"layout.css"|asset_url:stylesheet_tag}
 	{"style.css"|asset_url:stylesheet_tag}
-	{"jm-shoplo-theme.css"|asset_url:stylesheet_tag}
+	{"jm-shoplo-theme.css?v=1.1"|asset_url:stylesheet_tag}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	{head_content}
 </head>

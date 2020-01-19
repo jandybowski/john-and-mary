@@ -1,8 +1,16 @@
 /* J&M custom */
 
-#page-home .jm-nav {
-    background: none;
+html,
+body,
+#page {
+    height: 100%;
 }
+
+#page-home .jm-nav,
+#page-home .header-10 {
+    background: transparent;
+}
+
 
 #page-home #mainNav ul li a {
     color: white;
@@ -10,6 +18,32 @@
 
 #page-home .jm-nav__logo-image {
     fill: white;
+}
+
+
+.jm-nav__logo-image_mobile {
+	fill: black !important;
+}
+
+.mobile-home-link {
+	font-size: 1em !important;
+	line-height: 0 !important;
+	
+}
+
+.banner-27 {
+	position: absolute;
+	top: 0;
+}
+
+.header-10 {
+	position: relative;
+	z-index: 20;
+	background: rgba(255,255,255, .9);
+}
+
+.header-10 #mobileNav {
+	margin-bottom: 0;
 }
 
 #page-home .header-10 #mainNav .nav-inline>li .submenu {
@@ -43,13 +77,12 @@
 
 .cart-widget-total-count {
     position: absolute;
-    left: .5em;
+    left: 1.5em;
     font-weight: 100;
 }
 
 .jm-nav {
     display: flex;
-    background: white;
     padding: .5em 0 1em;
 }
 
@@ -137,6 +170,7 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 15px 10px;
+    min-height: 5em;
 }
 .grid-col3-1 .product-list figcaption .product-price p {
     font-family: 'Cormorant Garamond', serif;
@@ -158,12 +192,6 @@
 }
 
 
-.footer-2 .footer-nav li + li {
-    margin-left: 15px;
-    padding-left: 15px;
-    border-left: solid 1px;
-}
-
 html:not(.mm-opened) body:not(#page-home) {
     padding-top: 100px;
 }
@@ -173,7 +201,6 @@ body {
 }
 
 body:not(#page-home) .header-10 {
-    background: white;
     position: fixed;
     top: 0;
 }
@@ -181,6 +208,10 @@ body:not(#page-home) .header-10 {
 .header-10 #mobileNav a .cart-widget-total-count,
 .header-10 #mobileNav span.cart-widget-icon .cart-widget-total-count {
     left: -.1em;
+}
+
+.product-price {
+    white-space: nowrap;
 }
 	
 @media (min-width: 768px) {
@@ -193,6 +224,7 @@ body:not(#page-home) .header-10 {
         opacity: 0;
         transition: all .25s ease-in-out;
         visibility: hidden;
+        min-height: none;
     }
 
     .grid-col3-1 .product-list .img:hover + figcaption {
@@ -211,10 +243,17 @@ body:not(#page-home) .header-10 {
         background: linear-gradient(to bottom, rgba(0,0,0,.45), transparent);
         z-index: 5;
     }
-    
-    #page-home .header-10 {
-        z-index: 20;
+
+    .footer-2 .footer-nav {
+        float: right;
     }
+
+}
+
+@media (max-width: 767px) {
+	#page-home .header-10 {
+		background: rgba(255,255,255, .9);
+	}
 }
 
 @media (max-width: 991px) {
@@ -226,5 +265,56 @@ body:not(#page-home) .header-10 {
 @media (max-width: 543px) {
     .product-list figure .img a {
         min-height: 65vw;
+    }
+    .footer-2 .footer-nav li {
+        float: none;
+        margin-bottom: .5em;
+    }
+}
+
+@media (min-width: 544px) {
+    .footer-2 .footer-nav li + li {
+        margin-left: 15px;
+        padding-left: 15px;
+        border-left: solid 1px;
+    }
+
+    .footer-2 {
+        min-height: 100px;
+    }
+
+    #page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category_2,
+    .page-content,
+    #page {
+        flex: 1;
+    }
+
+    .nav-inline .nav-item {
+        white-space: nowrap;
+    }
+
+    .nav-inline .nav-item + .nav-item {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        position: relative;
+    }
+
+    .nav-inline .nav-item + .nav-item:not(.nav-cart)::before {
+        content: " ";
+        top: .25em;
+        left: 0;
+        position: absolute;
+        height: 1em;
+        width: 1px;
+        background: #777;
+    }
+
+    #page-home .nav-item::before {
+        background: rgba(255, 255, 255, .75);
     }
 }
